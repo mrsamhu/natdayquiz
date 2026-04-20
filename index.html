@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which Singaporean Dish Are You?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf6e3;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+      color: #d32f2f;
+    }
+    .question-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
+    }
+    .quiz-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .options label {
+      display: block;
+      background: #f4f4f4;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .options label:hover {
+      background: #e0e0e0;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    button.submit-btn {
+      display: block;
+      width: 100%;
+      background: #d32f2f;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button.submit-btn:hover {
+      background: #b71c1c;
+    }
+    #quiz-result-section {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      text-align: center;
+      margin-top: 30px;
+    }
+    .result-image {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🇸🇬 Which Singaporean Dish Are You?</h1>
+  <p style="text-align: center;">Answer these 7 scenarios to find out your true National Day dish personality!</p>
+
+  <form id="quiz-form">
+    <div class="question-container">
+      <h2>1. You just reached a super crowded hawker centre during lunch hour. What do you do?</h2>
+      <img src="images/hawker.png" alt="Hawker Centre" class="quiz-image">
+      <div class="options">
+        <label><input type="radio" name="q1" value="E" required> A: Chope a big table with a tissue packet, wave your friends over, and go order from the loudest uncle.</label>
+        <label><input type="radio" name="q1" value="I"> B: Quietly scan for a small corner seat, or just dabao and eat somewhere peaceful.</label>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <h2>2. You are at a hipster cafe in Bugis and looking at the menu. How do you choose?</h2>
+      <img src="images/cafe.png" alt="Cafe Menu" class="quiz-image">
+      <div class="options">
+        <label><input type="radio" name="q2" value="S" required> A: Stick to the classic truffle fries and a flat white. Confirm plus chop nice, why take the risk?</label>
+        <label><input type="radio" name="q2" value="N"> B: Order the "Mala-infused Ondeh-Ondeh Waffles." You love trying weird, new concepts just to see what happens.</label>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <h2>3. Your friend bought a new viral snack, takes a bite, and complains it tastes terrible. Your reaction?</h2>
+      <img src="images/snack.png" alt="Friends eating snacks" class="quiz-image">
+      <div class="options">
+        <label><input type="radio" name="q3" value="T" required> A: Tell them straight, "Yah, this one CMI, look at the ingredients, totally overhyped."</label>
+        <label><input type="radio" name="q3" value="F"> B: Console them, say "Aiyo, so poor thing," and offer to share your own snack so they don't feel sad.</label>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <h2>4. It's a long weekend! How are you tackling your food hunt around Singapore?</h2>
+      <img src="images/map.png" alt="Food Map" class="quiz-image">
+      <div class="options">
+        <label><input type="radio" name="q4" value="J" required> A: Got full itinerary ready. Google Maps pins saved, opening hours checked, MRT routes planned.</label>
+        <label><input type="radio" name="q4" value="P"> B: Just go with the flow. Walk around Katong or Chinatown, see which stall has the longest queue, and join blindly.</label>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <h2>5. Oh no! The MRT breaks down while you are on the way to a class gathering dinner.</h2>
+      <img src="images/mrt.png" alt="MRT Train" class="quiz-image">
+      <div class="options">
+        <label><input type="radio" name="q5" value="E" required> A: Start chatting with the stranded people around you, or aggressively update the class group chat.</label>
+        <label><input type="radio" name="q5" value="I"> B: Put on your AirPods, listen to Spotify, and calmly text one close friend that you'll be late.</label>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <h2>6. You are tasked to cook a dish for a school potluck. What’s your cooking style?</h2>
+      <img src="images/cooking.png" alt="Cooking" class="quiz-image">
+      <div class="options">
+        <label><input type="radio" name="q6" value="S" required> A: Follow the YouTube tutorial exactly. 100g of sugar means exactly 100g. Cannot deviate!</label>
+        <label><input type="radio" name="q6" value="N"> B: Agar-agar only! A splash of soy sauce here, a dash of pepper there. Cook with feeling!</label>
+      </div>
+    </div>
+
+    <div class="question-container">
+      <h2>7. Nearing the end of the meal, it’s time to settle the bill.</h2>
+      <img src="images/paynow.png" alt="Paynow QR" class="quiz-image">
+      <div class="options">
+        <label><input type="radio" name="q7" value="J" required> A: Already calculating the GST and service charge in your head, preparing the PayNow QR code for everyone.</label>
+        <label><input type="radio" name="q7" value="P"> B: Haven't even thought about the bill yet. Still chilling, maybe ordering an Ice Kachang.</label>
+      </div>
+    </div>
+
+    <button type="button" class="submit-btn" onclick="calculateResult()">Submit to find your dish!</button>
+  </form>
+
+  <div id="quiz-result-section" style="display: none;">
+    <h2>Your Personality is...</h2>
+    <h1 id="result-title"></h1>
+    <h3 id="result-mbti" style="color: #666;"></h3>
+    <img id="result-image" src="" alt="Dish Image" class="result-image">
+    <p id="result-desc" style="font-size: 18px;"></p>
+    <h3 id="result-pair" style="color: #d32f2f;"></h3>
+  </div>
+
+  <script>
+    const dishResults = {
+      "ENTJ": { name: "Chilli Crab", imagePath: "images/chilli-crab.png", desc: "Wah, you are the big boss of the table! A bit fierce, a bit fiery, but everyone naturally looks up to you. You are bold, know exactly what you want, and you get things done.", pair: "Kaya Toast & Kopi" },
+      "ESTJ": { name: "Chilli Crab", imagePath: "images/chilli-crab.png", desc: "Wah, you are the big boss of the table! A bit fierce, a bit fiery, but everyone naturally looks up to you. You are bold, know exactly what you want, and you get things done.", pair: "Kaya Toast & Kopi" },
+      
+      "ISTJ": { name: "Hainanese Chicken Rice", imagePath: "images/chicken-rice.png", desc: "You are the classic steady pom pi pi type. Very practical, very organized, and no-nonsense. You confirm plus chop won't let people down.", pair: "Roti Prata" },
+      "INTJ": { name: "Hainanese Chicken Rice", imagePath: "images/chicken-rice.png", desc: "You are the classic steady pom pi pi type. Very practical, very organized, and no-nonsense. You confirm plus chop won't let people down.", pair: "Roti Prata" },
+      
+      "ISFJ": { name: "Nasi Lemak", imagePath: "images/nasi-lemak.png", desc: "You are everyone’s ultimate comfort zone. You are wholesome, traditional, and always making sure your friends are full and happy.", pair: "Satay" },
+      "ESFJ": { name: "Nasi Lemak", imagePath: "images/nasi-lemak.png", desc: "You are everyone’s ultimate comfort zone. You are wholesome, traditional, and always making sure your friends are full and happy.", pair: "Satay" },
+      
+      "ESFP": { name: "Roti Prata", imagePath: "images/roti-prata.png", desc: "Super flexible and always flipping around! You are the life of the party, spontaneous, and very easygoing. Any time, any place, you also can fit in.", pair: "Hainanese Chicken Rice" },
+      "ENFP": { name: "Roti Prata", imagePath: "images/roti-prata.png", desc: "Super flexible and always flipping around! You are the life of the party, spontaneous, and very easygoing. Any time, any place, you also can fit in.", pair: "Hainanese Chicken Rice" },
+      
+      "ENFJ": { name: "Laksa", imagePath: "images/laksa.png", desc: "You are very deep and complex, hor? You care deeply about others and have a very warm, spicy soul that naturally draws people to you.", pair: "Hokkien Mee" },
+      "INFJ": { name: "Laksa", imagePath: "images/laksa.png", desc: "You are very deep and complex, hor? You care deeply about others and have a very warm, spicy soul that naturally draws people to you.", pair: "Hokkien Mee" },
+      
+      "ISFP": { name: "Kaya Toast & Kopi", imagePath: "images/kaya-toast.png", desc: "Lepak only. You appreciate the simple, beautiful things in life. You are sweet, nostalgic, and prefer to keep things peaceful without drama.", pair: "Chilli Crab" },
+      "INFP": { name: "Kaya Toast & Kopi", imagePath: "images/kaya-toast.png", desc: "Lepak only. You appreciate the simple, beautiful things in life. You are sweet, nostalgic, and prefer to keep things peaceful without drama.", pair: "Chilli Crab" },
+      
+      "ESTP": { name: "Satay", imagePath: "images/satay.png", desc: "Action speaks louder than words! You are hands-on, smoky, and always ready for an adventure. Life with you is never boring.", pair: "Nasi Lemak" },
+      "ISTP": { name: "Satay", imagePath: "images/satay.png", desc: "Action speaks louder than words! You are hands-on, smoky, and always ready for an adventure. Life with you is never boring.", pair: "Nasi Lemak" },
+      
+      "ENTP": { name: "Hokkien Mee", imagePath: "images/hokkien-mee.png", desc: "You are the mad scientist of the group. Maybe a bit messy on the outside, but your brain combines different concepts into a super rich mix!", pair: "Laksa" },
+      "INTP": { name: "Hokkien Mee", imagePath: "images/hokkien-mee.png", desc: "You are the mad scientist of the group. Maybe a bit messy on the outside, but your brain combines different concepts into a super rich mix!", pair: "Laksa" }
+    };
+
+    function calculateResult() {
+      // Check if all questions are answered
+      const totalQuestions = 7;
+      let answered = 0;
+      for (let i = 1; i <= totalQuestions; i++) {
+        if (document.querySelector(`input[name="q${i}"]:checked`)) {
+          answered++;
+        }
+      }
+      
+      if (answered < totalQuestions) {
+        alert("Aiyo, don't anyhow skip! Please answer all 7 questions first.");
+        return;
+      }
+
+      // Tally the scores
+      let counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+      
+      for (let i = 1; i <= totalQuestions; i++) {
+        let answer = document.querySelector(`input[name="q${i}"]:checked`).value;
+        counts[answer]++;
+      }
+
+      // Determine MBTI Letters
+      let mbti = "";
+      mbti += (counts.E >= counts.I) ? "E" : "I";
+      mbti += (counts.S >= counts.N) ? "S" : "N";
+      mbti += (counts.T >= counts.F) ? "T" : "F";
+      mbti += (counts.J >= counts.P) ? "J" : "P";
+
+      // Display the result
+      const resultData = dishResults[mbti];
+      document.getElementById("result-title").innerText = resultData.name;
+      document.getElementById("result-mbti").innerText = `(Your MBTI Profile: ${mbti})`;
+      
+      // Update image
+      const imgElement = document.getElementById("result-image");
+      imgElement.src = resultData.imagePath;
+      imgElement.alt = resultData.name;
+      
+      document.getElementById("result-desc").innerText = resultData.desc;
+      document.getElementById("result-pair").innerText = `Best Pair: ${resultData.pair}`;
+      
+      // Show the section and scroll to it
+      const resultSection = document.getElementById("quiz-result-section");
+      resultSection.style.display = "block";
+      resultSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
