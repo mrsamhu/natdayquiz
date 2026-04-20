@@ -18,12 +18,21 @@
       text-align: center;
       color: #d32f2f;
     }
+    .intro-text {
+      text-align: center;
+      margin-bottom: 20px;
+    }
     .question-container {
       background: white;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       margin-bottom: 25px;
+      display: none; /* Hides all questions by default */
+    }
+    /* Only show the first question initially */
+    #q-step-1 {
+      display: block; 
     }
     .quiz-image {
       max-width: 100%;
@@ -49,7 +58,7 @@
     input[type="radio"] {
       margin-right: 10px;
     }
-    button.submit-btn {
+    .nav-btn {
       display: block;
       width: 100%;
       background: #d32f2f;
@@ -61,7 +70,7 @@
       cursor: pointer;
       margin-top: 20px;
     }
-    button.submit-btn:hover {
+    .nav-btn:hover {
       background: #b71c1c;
     }
     #quiz-result-section {
@@ -71,6 +80,7 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       text-align: center;
       margin-top: 30px;
+      display: none;
     }
     .result-image {
       max-width: 300px;
@@ -84,76 +94,81 @@
 <body>
 
   <h1>🇸🇬 Which Singaporean Dish Are You?</h1>
-  <p style="text-align: center;">Answer these 7 scenarios to find out your true National Day dish personality!</p>
+  <p class="intro-text" id="intro-text">Answer these 7 scenarios to find out your true National Day dish personality!</p>
 
   <form id="quiz-form">
-    <div class="question-container">
+    <div class="question-container" id="q-step-1">
       <h2>1. You just reached a super crowded hawker centre during lunch hour. What do you do?</h2>
       <img src="images/hawker.png" alt="Hawker Centre" class="quiz-image">
       <div class="options">
-        <label><input type="radio" name="q1" value="E" required> A: Chope a big table with a tissue packet, wave your friends over, and go order from the loudest uncle.</label>
+        <label><input type="radio" name="q1" value="E"> A: Chope a big table with a tissue packet, wave your friends over, and go order from the loudest uncle.</label>
         <label><input type="radio" name="q1" value="I"> B: Quietly scan for a small corner seat, or just dabao and eat somewhere peaceful.</label>
       </div>
+      <button type="button" class="nav-btn" onclick="nextQuestion(1)">Next Question</button>
     </div>
 
-    <div class="question-container">
+    <div class="question-container" id="q-step-2">
       <h2>2. You are at a hipster cafe in Bugis and looking at the menu. How do you choose?</h2>
       <img src="images/cafe.png" alt="Cafe Menu" class="quiz-image">
       <div class="options">
-        <label><input type="radio" name="q2" value="S" required> A: Stick to the classic truffle fries and a flat white. Confirm plus chop nice, why take the risk?</label>
+        <label><input type="radio" name="q2" value="S"> A: Stick to the classic truffle fries and a flat white. Confirm plus chop nice, why take the risk?</label>
         <label><input type="radio" name="q2" value="N"> B: Order the "Mala-infused Ondeh-Ondeh Waffles." You love trying weird, new concepts just to see what happens.</label>
       </div>
+      <button type="button" class="nav-btn" onclick="nextQuestion(2)">Next Question</button>
     </div>
 
-    <div class="question-container">
+    <div class="question-container" id="q-step-3">
       <h2>3. Your friend bought a new viral snack, takes a bite, and complains it tastes terrible. Your reaction?</h2>
       <img src="images/snack.png" alt="Friends eating snacks" class="quiz-image">
       <div class="options">
-        <label><input type="radio" name="q3" value="T" required> A: Tell them straight, "Yah, this one CMI, look at the ingredients, totally overhyped."</label>
+        <label><input type="radio" name="q3" value="T"> A: Tell them straight, "Yah, this one CMI, look at the ingredients, totally overhyped."</label>
         <label><input type="radio" name="q3" value="F"> B: Console them, say "Aiyo, so poor thing," and offer to share your own snack so they don't feel sad.</label>
       </div>
+      <button type="button" class="nav-btn" onclick="nextQuestion(3)">Next Question</button>
     </div>
 
-    <div class="question-container">
+    <div class="question-container" id="q-step-4">
       <h2>4. It's a long weekend! How are you tackling your food hunt around Singapore?</h2>
       <img src="images/map.png" alt="Food Map" class="quiz-image">
       <div class="options">
-        <label><input type="radio" name="q4" value="J" required> A: Got full itinerary ready. Google Maps pins saved, opening hours checked, MRT routes planned.</label>
+        <label><input type="radio" name="q4" value="J"> A: Got full itinerary ready. Google Maps pins saved, opening hours checked, MRT routes planned.</label>
         <label><input type="radio" name="q4" value="P"> B: Just go with the flow. Walk around Katong or Chinatown, see which stall has the longest queue, and join blindly.</label>
       </div>
+      <button type="button" class="nav-btn" onclick="nextQuestion(4)">Next Question</button>
     </div>
 
-    <div class="question-container">
+    <div class="question-container" id="q-step-5">
       <h2>5. Oh no! The MRT breaks down while you are on the way to a class gathering dinner.</h2>
       <img src="images/mrt.png" alt="MRT Train" class="quiz-image">
       <div class="options">
-        <label><input type="radio" name="q5" value="E" required> A: Start chatting with the stranded people around you, or aggressively update the class group chat.</label>
+        <label><input type="radio" name="q5" value="E"> A: Start chatting with the stranded people around you, or aggressively update the class group chat.</label>
         <label><input type="radio" name="q5" value="I"> B: Put on your AirPods, listen to Spotify, and calmly text one close friend that you'll be late.</label>
       </div>
+      <button type="button" class="nav-btn" onclick="nextQuestion(5)">Next Question</button>
     </div>
 
-    <div class="question-container">
+    <div class="question-container" id="q-step-6">
       <h2>6. You are tasked to cook a dish for a school potluck. What’s your cooking style?</h2>
       <img src="images/cooking.png" alt="Cooking" class="quiz-image">
       <div class="options">
-        <label><input type="radio" name="q6" value="S" required> A: Follow the YouTube tutorial exactly. 100g of sugar means exactly 100g. Cannot deviate!</label>
+        <label><input type="radio" name="q6" value="S"> A: Follow the YouTube tutorial exactly. 100g of sugar means exactly 100g. Cannot deviate!</label>
         <label><input type="radio" name="q6" value="N"> B: Agar-agar only! A splash of soy sauce here, a dash of pepper there. Cook with feeling!</label>
       </div>
+      <button type="button" class="nav-btn" onclick="nextQuestion(6)">Next Question</button>
     </div>
 
-    <div class="question-container">
+    <div class="question-container" id="q-step-7">
       <h2>7. Nearing the end of the meal, it’s time to settle the bill.</h2>
       <img src="images/paynow.png" alt="Paynow QR" class="quiz-image">
       <div class="options">
-        <label><input type="radio" name="q7" value="J" required> A: Already calculating the GST and service charge in your head, preparing the PayNow QR code for everyone.</label>
+        <label><input type="radio" name="q7" value="J"> A: Already calculating the GST and service charge in your head, preparing the PayNow QR code for everyone.</label>
         <label><input type="radio" name="q7" value="P"> B: Haven't even thought about the bill yet. Still chilling, maybe ordering an Ice Kachang.</label>
       </div>
+      <button type="button" class="nav-btn" onclick="calculateResult()">Submit to find your dish!</button>
     </div>
-
-    <button type="button" class="submit-btn" onclick="calculateResult()">Submit to find your dish!</button>
   </form>
 
-  <div id="quiz-result-section" style="display: none;">
+  <div id="quiz-result-section">
     <h2>Your Personality is...</h2>
     <h1 id="result-title"></h1>
     <h3 id="result-mbti" style="color: #666;"></h3>
@@ -189,22 +204,29 @@
       "INTP": { name: "Hokkien Mee", imagePath: "images/hokkien-mee.png", desc: "You are the mad scientist of the group. Maybe a bit messy on the outside, but your brain combines different concepts into a super rich mix!", pair: "Laksa" }
     };
 
-    function calculateResult() {
-      // Check if all questions are answered
-      const totalQuestions = 7;
-      let answered = 0;
-      for (let i = 1; i <= totalQuestions; i++) {
-        if (document.querySelector(`input[name="q${i}"]:checked`)) {
-          answered++;
-        }
+    function nextQuestion(currentStep) {
+      // Check if an option is selected for the current question
+      if (!document.querySelector(`input[name="q${currentStep}"]:checked`)) {
+        alert("Aiyo, don't anyhow skip! Please select an answer first.");
+        return;
       }
-      
-      if (answered < totalQuestions) {
-        alert("Aiyo, don't anyhow skip! Please answer all 7 questions first.");
+
+      // Hide the current question
+      document.getElementById(`q-step-${currentStep}`).style.display = 'none';
+
+      // Show the next question
+      document.getElementById(`q-step-${currentStep + 1}`).style.display = 'block';
+    }
+
+    function calculateResult() {
+      // Check if the final question is answered
+      if (!document.querySelector(`input[name="q7"]:checked`)) {
+        alert("Aiyo, almost done! Please select an answer first.");
         return;
       }
 
       // Tally the scores
+      const totalQuestions = 7;
       let counts = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
       
       for (let i = 1; i <= totalQuestions; i++) {
@@ -218,6 +240,10 @@
       mbti += (counts.S >= counts.N) ? "S" : "N";
       mbti += (counts.T >= counts.F) ? "T" : "F";
       mbti += (counts.J >= counts.P) ? "J" : "P";
+
+      // Hide the last question and intro text
+      document.getElementById('q-step-7').style.display = 'none';
+      document.getElementById('intro-text').style.display = 'none';
 
       // Display the result
       const resultData = dishResults[mbti];
